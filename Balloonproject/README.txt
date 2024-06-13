@@ -19,4 +19,15 @@ ISO Format
 
 2024-06-13
 13:30 
-> We created new class named Balloon.cs in the Models folder and 
+> We created new class named Balloon.cs in the Models folder and add the contents in it.
+
+13:54
+> Created new controller 'BalloonsController.cs'
+
+13:56
+> created the database "ApplicationDbContext.cs" >> Migration
+
+> "BalloonprojectContext.cs" >> Migration
+
+14:59
+> 
