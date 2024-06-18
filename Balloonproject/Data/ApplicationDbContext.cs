@@ -9,5 +9,6 @@ namespace Balloonproject.Data
             : base(options)
         {
         }
+        public DbSet<Models.Balloon> Balloons { get; set; }
     }
 }

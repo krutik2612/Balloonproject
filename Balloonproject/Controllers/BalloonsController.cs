@@ -45,17 +45,19 @@ namespace Balloonproject.Controllers
             return View(balloon);
         }
 
-        // GET: Balloons/Create
+
+        // GET: Apples/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Balloons/Create
+        // POST: Apples/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+       
         public async Task<IActionResult> Create([Bind("Id,Name,Material,Shape,Size,Color,Price,ImageUrl")] Balloon balloon)
         {
             if (ModelState.IsValid)
@@ -67,7 +69,7 @@ namespace Balloonproject.Controllers
             return View(balloon);
         }
 
-        // GET: Balloons/Edit/5
+        // GET: Apples/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Balloon == null)
@@ -83,14 +85,14 @@ namespace Balloonproject.Controllers
             return View(balloon);
         }
 
-        // POST: Balloons/Edit/5
+        // POST: Apples/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Material,Shape,Size,Color,Price,ImageUrl")] Balloon balloon)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Origin,ImportDate,Color,Price,Nutrients,Shape")] Balloon Balloon)
         {
-            if (id != balloon.Id)
+            if (id != Balloon.Id)
             {
                 return NotFound();
             }
@@ -99,12 +101,12 @@ namespace Balloonproject.Controllers
             {
                 try
                 {
-                    _context.Update(balloon);
+                    _context.Update(Balloon);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BalloonExists(balloon.Id))
+                    if (!AppleExists(Balloon.Id))
                     {
                         return NotFound();
                     }
@@ -115,10 +117,10 @@ namespace Balloonproject.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(balloon);
+            return View(Balloon);
         }
 
-        // GET: Balloons/Delete/5
+        // GET: Apples/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Balloon == null)
@@ -126,38 +128,38 @@ namespace Balloonproject.Controllers
                 return NotFound();
             }
 
-            var balloon = await _context.Balloon
+            var apple = await _context.Balloon
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (balloon == null)
+            if (apple == null)
             {
                 return NotFound();
             }
 
-            return View(balloon);
+            return View(apple);
         }
 
-        // POST: Balloons/Delete/5
+        // POST: Apples/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Balloon == null)
             {
-                return Problem("Entity set 'BalloonprojectContext.Balloon'  is null.");
+                return Problem("Entity set 'Applelicious_VenturesContext.Apple'  is null.");
             }
-            var balloon = await _context.Balloon.FindAsync(id);
-            if (balloon != null)
+            var apple = await _context.Balloon.FindAsync(id);
+            if (apple != null)
             {
-                _context.Balloon.Remove(balloon);
+                _context.Balloon.Remove(apple);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BalloonExists(int id)
+        private bool AppleExists(int id)
         {
-          return (_context.Balloon?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Balloon?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
