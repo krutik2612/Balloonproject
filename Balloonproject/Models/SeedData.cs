@@ -1,4 +1,4 @@
-﻿using Balloonproject.Data;
+﻿using Balloonproject.Migrations;
 using Balloonproject.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +29,7 @@ public static class SeedData
                 new Balloon
                 {
                     
+                    Id = 08,
                     Name = "Grey",
                     Material = "Rubber",
                     Shape = "ROUND",
@@ -42,6 +43,7 @@ public static class SeedData
                 },
                  new Balloon
                  {
+                     Id = 05,
                      Name = "Grey",
                      Material = "Rubber",
                      Shape = "ROUND",
@@ -54,6 +56,7 @@ public static class SeedData
                  },
                   new Balloon
                   {
+                      Id = 02,
                       Name = "Grey",
                       Material = "Rubber",
                       Shape = "ROUND",
@@ -66,11 +69,13 @@ public static class SeedData
                   },
                    new Balloon
                    {
+                       Id = 01,
                        Name = "Grey",
                        Material = "Rubber",
                        Shape = "ROUND",
                        Size = "L",
                        Color = "Grey",
+                       
                        
 
 
@@ -78,6 +83,7 @@ public static class SeedData
                    },
                     new Balloon
                     {
+                        Id = 01,
                         Name = "Grey",
                         Material = "Rubber",
                         Shape = "ROUND",
@@ -89,6 +95,7 @@ public static class SeedData
                     },
                  new Balloon
                  {
+                     Id = 01,
                      Name = "Grey",
                      Material = "Rubber",
                      Shape = "ROUND",
@@ -101,6 +108,7 @@ public static class SeedData
                  },
                   new Balloon
                   {
+                      Id = 01,
                       Name = "Grey",
                       Material = "Rubber",
                       Shape = "ROUND",
@@ -113,6 +121,7 @@ public static class SeedData
                   },
                    new Balloon
                    {
+                       Id = 01,
                        Name = "Grey",
                        Material = "Rubber",
                        Shape = "ROUND",
@@ -125,6 +134,7 @@ public static class SeedData
                    },
                 new Balloon
                 {
+                    Id = 01,
                     Name = "Grey",
                     Material = "Rubber",
                     Shape = "ROUND",
@@ -134,6 +144,7 @@ public static class SeedData
                 },
                 new Balloon
                 {
+                    Id = 01,
                     Name = "Grey",
                     Material = "Rubber",
                     Shape = "ROUND",
@@ -143,6 +154,7 @@ public static class SeedData
                 },
                 new Balloon
                 {
+                    Id = 01,
                     Name = "Grey",
                     Material = "Rubber",
                     Shape = "ROUND",

@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Balloonproject.Models;
 
-namespace Balloonproject.Data
+namespace Balloonproject.Migrations
 {
     public class BalloonprojectContext : DbContext
     {
-        public BalloonprojectContext (DbContextOptions<BalloonprojectContext> options)
+        public BalloonprojectContext(DbContextOptions<BalloonprojectContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Balloonproject.Models.Balloon> Balloon { get; set; } = default!;
+        public DbSet<Balloon> Balloon { get; set; } = default!;
     }
 }
