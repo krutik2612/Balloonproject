@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# IDE0022: Use block body for method
+csharp_style_expression_bodied_methods = when_on_single_line
+
+# IDE0047: Remove unnecessary parentheses
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity

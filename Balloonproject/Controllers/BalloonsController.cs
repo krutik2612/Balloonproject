@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Balloonproject.Data;
 using Balloonproject.Models;
+using Balloonproject.Migrations;
 
 namespace Balloonproject.Controllers
 {
@@ -45,6 +45,7 @@ namespace Balloonproject.Controllers
             return View(balloon);
         }
 
+
         // GET: Balloons/Create
         public IActionResult Create()
         {
@@ -56,6 +57,7 @@ namespace Balloonproject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+       
         public async Task<IActionResult> Create([Bind("Id,Name,Material,Shape,Size,Color,Price,ImageUrl")] Balloon balloon)
         {
             if (ModelState.IsValid)
@@ -88,9 +90,9 @@ namespace Balloonproject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Material,Shape,Size,Color,Price,ImageUrl")] Balloon balloon)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Material, Shape, Size, Color, Price, ImageUrl")] Balloon Balloon)
         {
-            if (id != balloon.Id)
+            if (id != Balloon.Id)
             {
                 return NotFound();
             }
@@ -99,23 +101,29 @@ namespace Balloonproject.Controllers
             {
                 try
                 {
-                    _context.Update(balloon);
+                    _context.Update(Balloon);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BalloonExists(balloon.Id))
+
+                    if (!BalloonExists(Balloon.Id))
                     {
-                        return NotFound();
+                        throw;
                     }
                     else
                     {
-                        throw;
+                        return NotFound();
                     }
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(balloon);
+            return View(Balloon);
+        }
+
+        private bool BalloonExists(int id)
+        {
+            throw new NotImplementedException();
         }
 
         // GET: Balloons/Delete/5
@@ -126,14 +134,14 @@ namespace Balloonproject.Controllers
                 return NotFound();
             }
 
-            var balloon = await _context.Balloon
+            var Balloon = await _context.Balloon
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (balloon == null)
+            if (Balloon == null)
             {
                 return NotFound();
             }
 
-            return View(balloon);
+            return View(Balloon);
         }
 
         // POST: Balloons/Delete/5
@@ -143,21 +151,18 @@ namespace Balloonproject.Controllers
         {
             if (_context.Balloon == null)
             {
-                return Problem("Entity set 'BalloonprojectContext.Balloon'  is null.");
+                return Problem("Entity set 'Balloonproject.Balloon'  is null.");
             }
-            var balloon = await _context.Balloon.FindAsync(id);
-            if (balloon != null)
+            var Balloon = await _context.Balloon.FindAsync(id);
+            if (Balloon != null)
             {
-                _context.Balloon.Remove(balloon);
+                _context.Balloon.Remove(Balloon);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BalloonExists(int id)
-        {
-          return (_context.Balloon?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
+        private bool Balloon(int id) => (_context.Balloon?.Any(e => e.Id == id)).GetValueOrDefault();
     }
 }

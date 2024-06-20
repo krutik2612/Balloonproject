@@ -25,7 +25,7 @@ ISO Format
 > Created new controller 'BalloonsController.cs'
 
 13:56
-> created the database "ApplicationDbContext.cs" >> Migration
+> created the database "00000000000000_CreateIdentitySchema.cs" >> Migration
 
 > "BalloonprojectContext.cs" >> Migration
 

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Balloonproject.Data
+namespace Balloonproject.Migrations
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -9,5 +9,6 @@ namespace Balloonproject.Data
             : base(options)
         {
         }
+        public DbSet<Models.Balloon> Balloons { get; set; }
     }
 }
