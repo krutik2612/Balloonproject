@@ -9,7 +9,7 @@ ISO Format
 > we have decided the company name
 
 15:45 
-> we identified the company we choose, they make diffrent types of balloons like latex, foil, vinyl, and plastic balloons.
+> we identified the company we choose, they make diffrent types of balloons..
 
 16:06 
 > we created an ASP.NET Core MVC application for our product 'Balloonproject'
