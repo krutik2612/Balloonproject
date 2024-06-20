@@ -1,4 +1,4 @@
-﻿﻿@{
+﻿<!--﻿@{
     ViewData["Title"] = "Balloonproject";
 }
 <!DOCTYPE html>
@@ -54,6 +54,9 @@
         }
     </style>
 </head>
+
+
+
 
     
 
@@ -156,5 +159,177 @@
 <div class="footer">
     &copy; 2024 Bargain Balloons. All rights reserved.
 </div>
+</body>
+</html>-->
+
+
+@{
+    ViewData["Title"] = "INK CRAFT";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial, sans-serif';
+            background-color: #87CEEB; /* Sky blue background color */
+            color: #333;
+        }
+
+        .header {
+            background-color: transparent; /* Make the header background transparent */
+            padding: 20px;
+            text-align: center;
+        }
+
+            .header .logo {
+                height: 300px;
+                width: auto;
+                text-align: center;
+            }
+
+            .header h1 {
+                margin: 10px 0 5px;
+                font-size: 2.5em;
+                text-align: center;
+            }
+
+            .header p {
+                margin: 0;
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+
+
+        .main {
+            padding: 40px;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .products {
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+            .product img {
+                max-width: 100%;
+                height: auto;
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 15px;
+            }
+
+            .product h3 {
+                font-size: 1.5em;
+                color: #004080;
+            }
+
+            .product p {
+                font-size: 1em;
+                color: #666;
+            }
+
+            .product:hover {
+                transform: scale(1.05);
+            }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://images2.alphacoders.com/105/1051041.jpg" alt="Bargain Balloons" class="logo">
+
+        <p>Your Trusted Source for variety of balloons</p>
+    </header>
+
+    <main class="main">
+        <section class="intro" id="home">
+            <h2>Welcome to Bargain Balloons</h2>
+            <p> we have it all.</p>
+        </section>
+        <section class="products" id="products">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="https://img.yezza.io/images/c168469e859c4f149051d539cee946c6.jpeg" alt="AirJoy Balloons">
+                    <h3>AirJoy Balloons</h3>
+                    <p></p>
+                </div>
+                <div class="product">
+                    <img src="https://static.pexels.com/photos/574282/pexels-photo-574282.jpeg" alt="SkyBurst Balloons">
+                    <h3>SkyBurst Balloons</h3>
+                    <p></p>
+                </div>
+                <div class="product">
+                    <img src="https://thumbs.dreamstime.com/b/group-floating-balloons-187981880.jpg" alt="DreamFloat Balloons">
+                    <h3>DreamFloat Balloons</h3>
+                    <p></p>
+                </div>
+                <div class="product">
+                    <img src="https://i.pinimg.com/originals/df/68/9b/df689b8de24e265b2b286e95d337e4f0.jpg" alt="CelestialAir Balloons">
+                    <h3>CelestialAir Balloons</h3>
+                    <p></p>
+                </div>
+                <div class="product">
+                    <img src="~/img/flyer.png" alt="LuminAir Balloons">
+                    <h3>LuminAir Balloons</h3>
+                    <p>.</p>
+                </div>
+                <div class="product">
+                    <img src="~/img/wb.png" alt="WonderLift Balloons">
+                    <h3>WonderLift Balloons</h3>
+                    <p></p>
+                </div>
+                <div class="product">
+                    <img src="~/img/bag.png" alt="EcoSphere Balloons">
+                    <h3>EcoSphere Balloons</h3>
+                    <p></p>
+                </div>
+                <div class="product">
+                    <img src="~/img/craft.png" alt="RainbowRise Balloons">
+                    <h3>RainbowRise Balloons</h3>
+                    <p></p>
+                </div>
+                <div class="product">
+                    <img src="~/img/pc.png" alt="WhisperWind Balloons">
+                    <h3>WhisperWind Balloons</h3>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
