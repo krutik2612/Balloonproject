@@ -7,143 +7,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Webpage Layout</title>
+    <title>@ViewData["Title"]</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMKtXtMk5NYXNP52phvH+LshP+E6F8e4EV6C9n1" crossorigin="anonymous">
     <style>
-        /* Reset default margin, padding, and box-sizing */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f0f8ff; /* Alice blue background color */
+            color: #333;
             display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-            nav a {
-                text-decoration: none;
-                color: #fff;
-                padding: 10px 20px;
-                transition: background-color 0.3s;
+        .header {
+            background: linear-gradient(90deg, rgba(135,206,250,1) 0%, rgba(30,144,255,1) 100%); /* Gradient background */
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+            .header .logo {
+                height: 150px;
+                width: auto;
+                text-align: center;
+                border-radius: 50%; /* Make the logo circular */
+                box-shadow: 0 0 20px rgba(0,0,0,0.2);
             }
 
-                nav a:hover {
-                    background-color: #555;
+            .header h1 {
+                margin: 10px 0 5px;
+                font-size: 2.5em;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .header p {
+                margin: 0;
+                font-size: 1.2em;
+            }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+            .navbar a {
+                text-decoration: none;
+                color: #333;
+                padding: 15px 20px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                .navbar a:hover {
+                    background-color: #005643;
+                    color: #fff;
                 }
 
-        .hero {
-            background-image: url('https://via.placeholder.com/1200x300');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
+        .main {
+            flex: 1;
+            padding: 40px 20px;
             text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            color: #005643;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .products h2 {
+            font-size: 2em;
             margin-bottom: 20px;
         }
 
-            .hero h1 {
-                font-size: 3em;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .product img {
+                max-width: 100%;
+                height: auto;
+                border-bottom: 1px solid #ddd;
+                border-radius: 10px 10px 0 0;
+                margin-bottom: 15px;
+                transition: transform 0.3s;
+            }
+
+            .product h3 {
+                font-size: 1.5em;
+                color: #005643;
                 margin-bottom: 10px;
             }
 
-            .hero p {
-                font-size: 1.5em;
+            .product p {
+                font-size: 1em;
+                color: #666;
             }
 
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-            .main-content img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease-in-out;
+            .product:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             }
 
-                .main-content img:hover {
-                    transform: scale(1.05);
-                }
-
-        footer {
-            background-color: #333;
+        .footer {
+            background-color: #005643;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
+            padding: 20px;
+            font-size: 0.9em;
         }
+
+            .footer a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 10px;
+                transition: color 0.3s;
+            }
+
+                .footer a:hover {
+                    color: #FFD700; /* Gold color on hover */
+                }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="container">
-            <h1>Modern Webpage Layout</h1>
-        </div>
+    <header class="header">
+        <img src="https://th.bing.com/th/id/OIG4.6yWvfW5Pcn4oPt57D.Wi?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Bargain Balloons" class="logo">
+        <h1>Bargain Balloons</h1>
+        <p>Your Trusted Source for a Variety of Balloons</p>
     </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <div class="hero">
-        <div class="container">
-            <h1>Welcome to Our Website</h1>
-            <p>Discover amazing products and services.</p>
-        </div>
-    </div>
+    <main class="main">
+        <section class="intro" id="home">
+            <h2>Welcome to Bargain Balloons</h2>
+            <p>We offer a wide range of balloons for every occasion.</p>
+        </section>
+        <section class="products" id="products">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="https://img.yezza.io/images/c168469e859c4f149051d539cee946c6.jpeg" alt="AirJoy Balloons">
+                    <h3>AirJoy Balloons</h3>
+                    <p>High-quality helium balloons perfect for any celebration.</p>
+                </div>
+                <div class="product">
+                    <img src="https://static.pexels.com/photos/574282/pexels-photo-574282.jpeg" alt="SkyBurst Balloons">
+                    <h3>SkyBurst Balloons</h3>
+                    <p>Colorful and vibrant balloons that add a pop of fun to your events.</p>
+                </div>
+                <div class="product">
+                    <img src="https://thumbs.dreamstime.com/b/group-floating-balloons-187981880.jpg" alt="DreamFloat Balloons">
+                    <h3>DreamFloat Balloons</h3>
+                    <p>Elegant and dreamy balloons for memorable moments.</p>
+                </div>
+                <div class="product">
+                    <img src="https://i.pinimg.com/originals/df/68/9b/df689b8de24e265b2b286e95d337e4f0.jpg" alt="CelestialAir Balloons">
+                    <h3>CelestialAir Balloons</h3>
+                    <p>Experience the celestial joy with our special balloons.</p>
+                </div>
+                <div class="product">
+                    <img src="https://i.pinimg.com/originals/d5/87/90/d5879019ce39391fd231b852a9c95fec.jpg" alt="LuminAir Balloons">
+                    <h3>LuminAir Balloons</h3>
+                    <p>Brighten up your day with our luminous balloons.</p>
+                </div>
+                <div class="product">
+                    <img src="https://i.pinimg.com/originals/d7/c3/db/d7c3db68d88248f41876282854d5c319.jpg" alt="WonderLift Balloons">
+                    <h3>WonderLift Balloons</h3>
+                    <p>Light and buoyant, our balloons lift your spirits.</p>
+                </div>
+                <div class="product">
+                    <img src="https://i.ytimg.com/vi/Z9naarOCGWM/maxresdefault.jpg" alt="Party Pop Balloons">
+                    <h3>Party Pop Balloons</h3>
+                    <p>Bursting with vibrant colors, perfect for lively celebrations.</p>
+                </div>
+                <div class="product">
+                    <img src="https://www.pinktreeparties.co.uk/wp-content/uploads/2020/04/confetti-bubble-pink-and-purple-768x746.jpg" alt="Blissful Bubble Balloons">
+                    <h3>Blissful Bubble Balloons</h3>
+                    <p>Elegant blend of pink and purple, ideal for dreamy occasions.</p>
+                </div>
+                <div class="product">
+                    <img src="https://i.pinimg.com/originals/fa/58/df/fa58df929f79645ff086fb6dc0b50f21.jpg" alt="Elegant Essence Balloons">
+                    <h3>Elegant Essence Balloons</h3>
+                    <p>Sophisticated and luxurious, enhancing formal events.</p>
+                </div>
+                <div class="product">
+                    <img src="https://i.pinimg.com/originals/65/d3/40/65d340ea54a9cee4abac2c41b61471c1.jpg" alt="Celestial Spark Balloons">
+                    <h3>Celestial Spark Balloons</h3>
+                    <p>Captivating with a touch of celestial magic, perfect for enchanting settings.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="container main-content">
-        <div>
-            <img src="https://via.placeholder.com/600x400" alt="Product 1">
-            <h2>Product 1</h2>
-            <p>Description of Product 1 goes here.</p>
-        </div>
-        <div>
-            <img src="https://via.placeholder.com/600x400" alt="Product 2">
-            <h2>Product 2</h2>
-            <p>Description of Product 2 goes here.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Modern Webpage Layout. All rights reserved.</p>
+    <footer class="footer">
+        <p>&copy; 2024 Bargain Balloons | <a href="#contact">Contact Us</a> | <a href="#privacy">Privacy Policy</a></p>
     </footer>
-
 </body>
 </html>
+
+
