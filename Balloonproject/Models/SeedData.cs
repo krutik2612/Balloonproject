@@ -16,7 +16,7 @@ public static class SeedData
 
     public static void Initialize(IServiceProvider serviceProvider)
     {
-        using (var context = new BalloonprojectContext(
+        using (BalloonprojectContext context = new BalloonprojectContext(
             serviceProvider.GetRequiredService<
                 DbContextOptions<BalloonprojectContext>>()))
         {

@@ -106,6 +106,10 @@
             padding: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align the contents */
+            justify-content: space-between; /* Distribute space evenly */
         }
 
             .product img {
@@ -127,6 +131,36 @@
                 font-size: 1em;
                 color: #666;
             }
+
+            .product .price {
+                font-size: 1.2em;
+                color: #005643;
+                margin-bottom: 10px;
+            }
+
+            .product .actions {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+                .product .actions a {
+                    background-color: #005643;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    font-size: 1em;
+                    cursor: pointer;
+                    text-decoration: none;
+                    transition: background-color 0.3s, transform 0.3s;
+                    border-radius: 5px;
+                }
+
+                    .product .actions a:hover {
+                        background-color: #007bff;
+                        transform: scale(1.05);
+                    }
 
             .product:hover {
                 transform: scale(1.05);
@@ -178,51 +212,91 @@
                     <img src="https://img.yezza.io/images/c168469e859c4f149051d539cee946c6.jpeg" alt="AirJoy Balloons">
                     <h3>AirJoy Balloons</h3>
                     <p>High-quality helium balloons perfect for any celebration.</p>
+                    <p class="price">$5.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://static.pexels.com/photos/574282/pexels-photo-574282.jpeg" alt="SkyBurst Balloons">
                     <h3>SkyBurst Balloons</h3>
                     <p>Colorful and vibrant balloons that add a pop of fun to your events.</p>
+                    <p class="price">$7.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://thumbs.dreamstime.com/b/group-floating-balloons-187981880.jpg" alt="DreamFloat Balloons">
                     <h3>DreamFloat Balloons</h3>
                     <p>Elegant and dreamy balloons for memorable moments.</p>
+                    <p class="price">$9.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://i.pinimg.com/originals/df/68/9b/df689b8de24e265b2b286e95d337e4f0.jpg" alt="CelestialAir Balloons">
                     <h3>CelestialAir Balloons</h3>
                     <p>Experience the celestial joy with our special balloons.</p>
+                    <p class="price">$11.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://i.pinimg.com/originals/d5/87/90/d5879019ce39391fd231b852a9c95fec.jpg" alt="LuminAir Balloons">
                     <h3>LuminAir Balloons</h3>
                     <p>Brighten up your day with our luminous balloons.</p>
+                    <p class="price">$13.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://i.pinimg.com/originals/d7/c3/db/d7c3db68d88248f41876282854d5c319.jpg" alt="WonderLift Balloons">
                     <h3>WonderLift Balloons</h3>
                     <p>Light and buoyant, our balloons lift your spirits.</p>
+                    <p class="price">$15.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://i.ytimg.com/vi/Z9naarOCGWM/maxresdefault.jpg" alt="Party Pop Balloons">
                     <h3>Party Pop Balloons</h3>
                     <p>Bursting with vibrant colors, perfect for lively celebrations.</p>
+                    <p class="price">$17.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://www.pinktreeparties.co.uk/wp-content/uploads/2020/04/confetti-bubble-pink-and-purple-768x746.jpg" alt="Blissful Bubble Balloons">
                     <h3>Blissful Bubble Balloons</h3>
                     <p>Elegant blend of pink and purple, ideal for dreamy occasions.</p>
+                    <p class="price">$19.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://i.pinimg.com/originals/fa/58/df/fa58df929f79645ff086fb6dc0b50f21.jpg" alt="Elegant Essence Balloons">
                     <h3>Elegant Essence Balloons</h3>
                     <p>Sophisticated and luxurious, enhancing formal events.</p>
+                    <p class="price">$21.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
                 <div class="product">
                     <img src="https://i.pinimg.com/originals/65/d3/40/65d340ea54a9cee4abac2c41b61471c1.jpg" alt="Celestial Spark Balloons">
                     <h3>Celestial Spark Balloons</h3>
                     <p>Captivating with a touch of celestial magic, perfect for enchanting settings.</p>
+                    <p class="price">$23.99</p>
+                    <div class="actions">
+                        <a href="#">Buy Now</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -233,5 +307,3 @@
     </footer>
 </body>
 </html>
-
-
