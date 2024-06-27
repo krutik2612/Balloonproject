@@ -1,16 +1,18 @@
 {
   "dependencies": {
-    "mssql1": {
-      "ignored": "true",
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:DefaultConnection"
-    },
     "mssql3": {
       "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/Balloonproject/providers/Microsoft.ServiceLinker/linkers/ConnectionStringskrutik_DF4EDA80A0",
       "secretStore": "AzureAppSettings",
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/balloonprojectdbserver/databases/Balloonproject_db",
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:krutik"
+    },
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/Balloonproject/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsDefaultConnection_1DA3E8EBA8",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/balloonprojectdbserver/databases/Balloonproject",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnection"
     }
   }
 }
