@@ -49,3 +49,5 @@ We added the 'About Us' link which states the basic information of our products.
 
 We added the Authentication of user which require user's credentials to login. 
 
+Database Id: krutik
+password: Kp2612@kush
