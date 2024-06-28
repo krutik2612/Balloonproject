@@ -108,8 +108,9 @@
             transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center align the contents */
-            justify-content: space-between; /* Distribute space evenly */
+            align-items: center;
+            justify-content: space-between;
+            position: relative; /* For positioning the absolute element */
         }
 
             .product img {
@@ -138,6 +139,17 @@
                 margin-bottom: 10px;
             }
 
+            .product .details {
+                font-size: 0.9em;
+                color: #333;
+                margin-bottom: 15px;
+                text-align: left;
+                width: 100%;
+                display: none; /* Hidden by default */
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out; /* Smooth transition */
+            }
+
             .product .actions {
                 display: flex;
                 justify-content: center;
@@ -155,6 +167,7 @@
                     text-decoration: none;
                     transition: background-color 0.3s, transform 0.3s;
                     border-radius: 5px;
+                    margin: 0 5px;
                 }
 
                     .product .actions a:hover {
@@ -186,6 +199,20 @@
                     color: #FFD700; /* Gold color on hover */
                 }
     </style>
+    <script>
+        function toggleDetails(button) {
+            const details = button.parentElement.previousElementSibling;
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                setTimeout(() => { details.style.opacity = 1; }, 10); // Smooth transition in
+                button.textContent = "Hide Details";
+            } else {
+                details.style.opacity = 0;
+                setTimeout(() => { details.style.display = "none"; }, 500); // Smooth transition out
+                button.textContent = "View Details";
+            }
+        }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -213,43 +240,53 @@
                     <h3>AirJoy Balloons</h3>
                     <p>High-quality helium balloons perfect for any celebration.</p>
                     <p class="price">$5.99</p>
+                    <p class="details">Material: Latex<br>Shape: Round<br>Size: 12 inches<br>Color: Multi-color</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
                 <div class="product">
-                    <img src="https://static.pexels.com/photos/574282/pexels-photo-574282.jpeg" alt="SkyBurst Balloons">
-                    <h3>SkyBurst Balloons</h3>
-                    <p>Colorful and vibrant balloons that add a pop of fun to your events.</p>
+                    <img src="https://media.istockphoto.com/photos/colorful-balloons-flying-in-the-sky-party-picture-id613866574?k=6&m=613866574&s=612x612&w=0&h=xOAbCS3vl_xwsMx8HL3F43vnB2jZDB7V9uORsWmNm38=" alt="HappySky Balloons">
+                    <h3>HappySky Balloons</h3>
+                    <p>Bright and colorful balloons to lift your spirits.</p>
                     <p class="price">$7.99</p>
+                    <p class="details">Material: Mylar<br>Shape: Star<br>Size: 18 inches<br>Color: Multi-color</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
                 <div class="product">
-                    <img src="https://thumbs.dreamstime.com/b/group-floating-balloons-187981880.jpg" alt="DreamFloat Balloons">
-                    <h3>DreamFloat Balloons</h3>
+                    <img src="https://deowgxgt4vwfe.cloudfront.net/uploads/1684236846_large.jpg" alt="Dreamy Balloons">
+                    <h3>Dreamy Balloons</h3>
                     <p>Elegant and dreamy balloons for memorable moments.</p>
                     <p class="price">$9.99</p>
+                    <p class="details">Material: Latex<br>Shape: Round<br>Size: 10 inches<br>Color: White</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
                 <div class="product">
-                    <img src="https://i.pinimg.com/originals/df/68/9b/df689b8de24e265b2b286e95d337e4f0.jpg" alt="CelestialAir Balloons">
+                    <img src="https://i.pinimg.com/originals/cd/ab/07/cdab0700ee30f41dac6e65b7f3a865ff.jpg" alt="CelestialAir Balloons">
                     <h3>CelestialAir Balloons</h3>
                     <p>Experience the celestial joy with our special balloons.</p>
                     <p class="price">$11.99</p>
+                    <p class="details">Material: Mylar<br>Shape: Round<br>Size: 16 inches<br>Color: White</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
                 <div class="product">
-                    <img src="https://i.pinimg.com/originals/d5/87/90/d5879019ce39391fd231b852a9c95fec.jpg" alt="LuminAir Balloons">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.eWyfHQ8_1ZA3T8eUDsxABgHaHa&pid=Api&P=0&h=180" alt="LuminAir Balloons">
                     <h3>LuminAir Balloons</h3>
                     <p>Brighten up your day with our luminous balloons.</p>
                     <p class="price">$13.99</p>
+                    <p class="details">Material: Latex<br>Shape: Oval<br>Size: 14 inches<br>Color: White</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
@@ -258,7 +295,9 @@
                     <h3>WonderLift Balloons</h3>
                     <p>Light and buoyant, our balloons lift your spirits.</p>
                     <p class="price">$15.99</p>
+                    <p class="details">Material: Latex<br>Shape: Round<br>Size: 24 inches<br>Color: Multi-Color</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
@@ -267,7 +306,9 @@
                     <h3>Party Pop Balloons</h3>
                     <p>Bursting with vibrant colors, perfect for lively celebrations.</p>
                     <p class="price">$17.99</p>
+                    <p class="details">Material: Latex<br>Shape: Round<br>Size: 16 inches<br>Color: Multi-Color</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
@@ -276,7 +317,9 @@
                     <h3>Blissful Bubble Balloons</h3>
                     <p>Elegant blend of pink and purple, ideal for dreamy occasions.</p>
                     <p class="price">$19.99</p>
+                    <p class="details">Material: Mylar<br>Shape: Round<br>Size: 18 inches<br>Color: Pink & Purple</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
@@ -285,7 +328,9 @@
                     <h3>Elegant Essence Balloons</h3>
                     <p>Sophisticated and luxurious, enhancing formal events.</p>
                     <p class="price">$21.99</p>
+                    <p class="details">Material: Latex<br>Shape: Round<br>Size: 12 inches<br>Color: White</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
@@ -294,7 +339,9 @@
                     <h3>Celestial Spark Balloons</h3>
                     <p>Captivating with a touch of celestial magic, perfect for enchanting settings.</p>
                     <p class="price">$23.99</p>
+                    <p class="details">Material: Mylar<br>Shape: Round<br>Size: 20 inches<br>Color: Silver</p>
                     <div class="actions">
+                        <a href="javascript:void(0);" onclick="toggleDetails(this)">View Details</a>
                         <a href="#">Buy Now</a>
                     </div>
                 </div>
