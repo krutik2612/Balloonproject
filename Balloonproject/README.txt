@@ -51,3 +51,7 @@ We added the Authentication of user which require user's credentials to login.
 
 Database Id: krutik
 password: Kp2612@kush
+
+
+login id: stc@gmail.com
+pass : Qwerty@1234
